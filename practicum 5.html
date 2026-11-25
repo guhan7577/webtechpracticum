@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaMotion Robotics - industrial robots, specifications, applications and enquiries.">
+  <title>NovaMotion Robotics | Industrial Robots &amp; Automation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo">Nova<span>Motion</span> Robotics</a>
+
+      <!-- CSS-only mobile menu button (checkbox + label) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open or close menu">
+      <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#categories">Robots</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#media">Demo</a></li>
+          <li><a href="#specifications">Specs</a></li>
+          <li><a href="#enquiry" class="cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Smart robots for <em>modern industry</em></h1>
+          <p>NovaMotion designs industrial robots that help factories, warehouses and hospitals work faster, safer and more accurately.</p>
+          <a href="#enquiry" class="btn btn-primary">Request a Demo</a>
+          <a href="#categories" class="btn btn-outline">Explore Robots</a>
+          <div class="hero-stats">
+            <div><strong>4</strong><span>Robot families</span></div>
+            <div><strong>500 kg</strong><span>Max payload</span></div>
+            <div><strong>24/7</strong><span>Operation</span></div>
+          </div>
+        </div>
+        <figure class="hero-img">
+          <img src="https://www.google.com/imgres?q=robotic%20arm&imgurl=https%3A%2F%2Frhinotoolhouse.com%2Fwp-content%2Fuploads%2F60107346_m_normal_none.jpg&imgrefurl=https%3A%2F%2Frhinotoolhouse.com%2Farticulated-manipulators%2Frevolutionizing-manufacturing-with-robotic-manipulator-arms-unleashing-efficiency-and-precision%2F&docid=lgNbyt1iZbp0EM&tbnid=ZxpahO1kesGrOM&vet=12ahUKEwjviJrOwu2XAxWFk-EIHTVHJXAQnPAOegUIngEQAA..i&w=2200&h=1678&hcb=2&ved=2ahUKEwjviJrOwu2XAxWFk-EIHTVHJXAQnPAOegUIngEQAA" alt="Industrial robotic arms moving boxes along an automated conveyor line" width="1000" height="350">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== ROBOT CATEGORIES ===== -->
+    <section id="categories">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Categories</h2>
+          <p>Four robot families built for different industrial tasks.</p>
+        </header>
+        <div class="card-grid">
+
+          <article class="card">
+            <span class="badge">Best seller</span>
+            <figure><img src="data:image/jpeg;base64,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" alt="Six-axis industrial robotic arm lifting a metal part" width="400" height="250" loading="lazy"></figure>
+            <div class="card-body">
+              <h3>Industrial Robotic Arms</h3>
+              <p>Welding, painting, assembly and material handling.</p>
+              <ul><li>Payload: 5 – 500 kg</li><li>Reach: up to 3.2 m</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">Safe</span>
+            <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIe82IJsLzCcQePR--ttKTNnug6hDDCzAXttGSSLdFqw&s=10" alt="Collaborative robot working next to a human operator" width="400" height="250" loading="lazy"></figure>
+            <div class="card-body">
+              <h3>Collaborative Robots</h3>
+              <p>Easy-to-program robots that work beside people.</p>
+              <ul><li>Payload: 3 – 20 kg</li><li>Force-limited sensors</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">Autonomous</span>
+            <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQehdTJKkAMaqqkSCOAKw0Gpjz7uRjKXeZGRS3OA9DkTQ&s=10" alt="Autonomous mobile robot carrying a pallet in a warehouse" width="400" height="250" loading="lazy"></figure>
+            <div class="card-body">
+              <h3>Autonomous Mobile Robots</h3>
+              <p>Self-navigating robots for logistics and transport.</p>
+              <ul><li>Payload: up to 1,000 kg</li><li>LiDAR navigation</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">High speed</span>
+            <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToXjnNYFwy9ftcj4hpodA8glKBhcpt5WUWGoLZN9mtow&s=10" width="400" height="250" loading="lazy"></figure>
+            <div class="card-body">
+              <h3>Delta Robots</h3>
+              <p>Ultra-fast sorting, packaging and electronics assembly.</p>
+              <ul><li>Up to 200 picks/min</li><li>Vision-guided</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery">
+      <div class="container">
+        <header class="section-head">
+          <h2>Applications Gallery</h2>
+          <p>Our robots at work across industries.</p>
+        </header>
+        <div class="gallery">
+          <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZlCA3ToiZxS1ZQ9i-S9YSY9mEN05bYfO5lxZEODsTlQ&s=10" alt="Robots welding a car body in an automotive plant" width="400" height="260" loading="lazy"><figcaption>Automotive welding</figcaption></figure>
+          <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBXzcfTEaRl2zY9AJCj5vn9VLK3iURSsE-owSdHUWZXw&s=10" alt="Robot placing components on a circuit board" width="400" height="260" loading="lazy"><figcaption>Electronics assembly</figcaption></figure>
+          <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkX2OLTLyw85RD6AqcigUCm0_MJLUq7mb2oXXpQuFXOg&s=10" alt="Mobile robots moving boxes in a warehouse" width="400" height="260" loading="lazy"><figcaption>Warehouse logistics</figcaption></figure>
+          <figure><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvo87Dtj0xiTOtIKA0kRQ6qZOxkJsUfWIrqAf3Jtv5Q&s=10" alt="Delta robots packing items on a conveyor" width="400" height="260" loading="lazy"><figcaption>High-speed packaging</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APPLICATIONS ===== -->
+    <section id="applications">
+      <div class="container">
+        <header class="section-head">
+          <h2>Industrial Applications</h2>
+          <p>Where NovaMotion robots deliver the most value.</p>
+        </header>
+        <div class="app-grid">
+          <article class="app-item"><h3>Automotive</h3><p>Welding, painting and body assembly with consistent quality.</p></article>
+          <article class="app-item"><h3>Electronics</h3><p>Precise component placement and board inspection.</p></article>
+          <article class="app-item"><h3>Logistics &amp; Warehousing</h3><p>Pallet transport, order picking and sorting.</p></article>
+          <article class="app-item"><h3>Food &amp; Packaging</h3><p>Hygienic high-speed packing and palletising.</p></article>
+        </div>
+        <aside class="benefits">
+          <h3>Key Benefits</h3>
+          <ol>
+            <li>Higher productivity and 24/7 operation</li>
+            <li>Improved accuracy and product quality</li>
+            <li>Safer workplaces by automating dangerous tasks</li>
+            <li>Lower long-term operating costs</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== AUDIO, VIDEO & MAP ===== -->
+    <section id="media">
+      <div class="container">
+        <header class="section-head">
+          <h2>See Our Robots in Action</h2>
+          <p>Watch a demonstration, listen to our jingle and find our demo centre.</p>
+        </header>
+        <div class="media-grid">
+          <div class="media-box">
+            <h3>Robot Demonstration Video</h3>
+            <video controls preload="metadata" poster="images/poster.jpg" width="720" height="405">
+              <source src="https://www.google.com/imgres?q=Robot%20Demonstration%20Video&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FI44_zbEwz_w%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DI44_zbEwz_w&docid=Y9_wIbH1LQEOCM&tbnid=lhmxRxcrxhH3ZM&vet=12ahUKEwi3if3exO2XAxUQcGwGHZxkLQ8QnPAOegQIVhAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwi3if3exO2XAxUQcGwGHZxkLQ8QnPAOegQIVhAA" type="video/mp4">
+              <track kind="captions" src="robot-demo.vtt" srclang="en" label="English" default>
+              Your browser does not support HTML5 video.
+            </video>
+            <p>A robotic arm sorting boxes beside a collaborative robot (English captions available).</p>
+          </div>
+          <div class="media-box">
+            <h3>Audio Overview</h3>
+            <audio controls preload="none">
+              <source src="media/intro.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <details>
+              <summary>Audio description</summary>
+              <p>Short instrumental jingle with no spoken words.</p>
+            </details>
+            <h3 style="margin-top:22px">Visit Our Facility</h3>
+            <iframe class="map-frame" style="height:220px"
+                    title="Map showing the NovaMotion Robotics demo centre area in Coimbatore"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=76.90%2C10.95%2C77.10%2C11.08&amp;layer=mapnik"
+                    loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPECIFICATIONS ===== -->
+    <section id="specifications">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Specifications</h2>
+          <p>Compare payload, reach and accuracy at a glance.</p>
+        </header>
+        <div class="table-wrap">
+          <table>
+            <caption>Comparison of NovaMotion robot models</caption>
+            <thead>
+              <tr>
+                <th scope="col">Model</th><th scope="col">Category</th><th scope="col">Payload</th>
+                <th scope="col">Reach / Speed</th><th scope="col">Repeatability</th><th scope="col">Power</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>NM-A500</td><td>Robotic Arm</td><td>500 kg</td><td>3.2 m reach</td><td>±0.05 mm</td><td>400 V, 3-phase</td></tr>
+              <tr><td>NM-C10</td><td>Cobot</td><td>10 kg</td><td>1.3 m reach</td><td>±0.03 mm</td><td>24 V DC</td></tr>
+              <tr><td>NM-M1000</td><td>AMR</td><td>1,000 kg</td><td>2.0 m/s</td><td>±10 mm</td><td>Li-ion, 8 h</td></tr>
+              <tr><td>NM-D200</td><td>Delta Robot</td><td>1 kg</td><td>200 picks/min</td><td>±0.1 mm</td><td>230 V AC</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ENQUIRY FORM ===== -->
+    <section id="enquiry">
+      <div class="container">
+        <header class="section-head">
+          <h2>Demo &amp; Quotation Request</h2>
+          <p>Tell us about your requirement and our team will contact you.</p>
+        </header>
+
+        <form class="form-box" action="#" method="post" enctype="multipart/form-data">
+          <p>Fields marked <span style="color:#c0392b">*</span> are required.</p>
+
+          <fieldset>
+            <legend>Contact Details</legend>
+            <label for="fullname" class="required">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Arun Kumar" required minlength="3" maxlength="60" pattern="[A-Za-z .'-]+" title="Letters, spaces, dots and hyphens only (minimum 3 characters)">
+
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@company.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" title="Enter a valid 10-digit Indian mobile number">
+
+            <label for="password" class="required">Create Password</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="30" pattern="(?=.*[A-Za-z])(?=.*[0-9]).{8,}" title="At least 8 characters with letters and numbers" placeholder="Minimum 8 characters">
+            <small>Use at least 8 characters including letters and numbers.</small>
+          </fieldset>
+
+          <fieldset>
+            <legend>Company &amp; Requirement</legend>
+            <label for="company" class="required">Company Name</label>
+            <input type="text" id="company" name="company" required maxlength="80">
+
+            <label for="industry" class="required">Industry</label>
+            <select id="industry" name="industry" required>
+              <option value="">-- Select your industry --</option>
+              <option value="automotive">Automotive</option>
+              <option value="electronics">Electronics</option>
+              <option value="logistics">Logistics &amp; Warehousing</option>
+              <option value="food">Food &amp; Packaging</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="quantity" class="required">Number of Robots Required</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="500" step="1" value="1" required>
+
+            <label for="demodate" class="required">Preferred Demo Date</label>
+            <input type="date" id="demodate" name="demodate" min="2026-11-05" max="2027-12-31" required>
+
+            <p style="margin-top:14px"><strong>Enquiry Type <span style="color:#c0392b">*</span></strong></p>
+            <label class="inline"><input type="radio" name="enquirytype" value="demo" required> Product demo</label>
+            <label class="inline"><input type="radio" name="enquirytype" value="quote"> Price quotation</label>
+            <label class="inline"><input type="radio" name="enquirytype" value="support"> Technical support</label>
+
+            <p style="margin-top:14px"><strong>Robot Types of Interest</strong></p>
+            <label class="inline"><input type="checkbox" name="robots" value="arm"> Robotic arm</label>
+            <label class="inline"><input type="checkbox" name="robots" value="cobot"> Cobot</label>
+            <label class="inline"><input type="checkbox" name="robots" value="amr"> AMR</label>
+            <label class="inline"><input type="checkbox" name="robots" value="delta"> Delta robot</label>
+
+            <label for="details" class="required">Describe Your Application</label>
+            <textarea id="details" name="details" rows="5" required minlength="20" maxlength="500" placeholder="e.g. We need to automate welding on our assembly line (minimum 20 characters)"></textarea>
+
+            <label for="spec">Upload Requirement Document</label>
+            <input type="file" id="spec" name="spec" accept=".pdf,.doc,.docx,image/png,image/jpeg">
+            <small>Optional. PDF, Word, PNG or JPG.</small>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences &amp; Consent</legend>
+            <p><strong>Preferred Contact Method</strong></p>
+            <label class="inline"><input type="radio" name="contact" value="email" checked> Email</label>
+            <label class="inline"><input type="radio" name="contact" value="phone"> Phone</label>
+            <label class="inline" style="display:block"><input type="checkbox" name="newsletter" value="yes"> Send me product updates</label>
+            <label class="inline" style="display:block"><input type="checkbox" name="terms" value="agreed" required> I agree to the terms and privacy policy <span style="color:#c0392b">*</span></label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-blue">Submit Request</button>
+            <button type="reset" class="btn btn-grey">Reset Form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>NovaMotion Robotics</h3>
+          <p>Smart robots for modern industry. Designing safer, faster and more accurate automation.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#categories">Robots</a></li>
+            <li><a href="#specifications">Specifications</a></li>
+            <li><a href="#enquiry">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            12 Automation Park, Coimbatore,<br>Tamil Nadu, India<br>
+            <a href="mailto:info@novamotion.example">info@novamotion.example</a>
+          </address>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 NovaMotion Robotics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Back to top">&uarr;</a>
+
+  <script>
+    /* Close the mobile menu after a link is tapped */
+    document.querySelectorAll(".nav-list a").forEach(function (a) {
+      a.addEventListener("click", function () { document.getElementById("nav-toggle").checked = false; });
+    });
+  </script>
+
+</body>
+</html>

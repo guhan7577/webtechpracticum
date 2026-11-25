@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<!--
+  OBJECTIVE:
+  Develop an industry-oriented webpage demonstrating CSS positioning techniques
+  such as static, relative, absolute, fixed, and sticky.
+-->
+<!--
+  OBJECTIVE:
+  Create an industry-specific image gallery using CSS Grid, with responsive
+  columns, consistent image dimensions, and meaningful captions.
+-->
+<!--
+  OBJECTIVE:
+  Develop an industry-oriented responsive webpage that adapts to desktop,
+  tablet, and mobile screen sizes using CSS media queries.
+-->
+<!--
+  OBJECTIVE:
+  Develop meaningful animated sequences within the existing industry-specific website.
+  Animations should respond to user interactions, such as button clicks, displaying
+  information cards, notifications, and opening or closing content sections.
+-->
+<!--
+  OBJECTIVE:
+  Develop dynamic webpage interactions to add, modify, display and remove
+  industry-specific information using DOM manipulation without reloading the page.
+-->
+<!--
+  OBJECTIVE:
+  Develop an industry-specific form with appropriate input constraints and validation.
+  Display error messages for invalid inputs and a success message on successful submission.
+-->
+<!--
+  OBJECTIVE:
+  Develop an API-integrated webpage that retrieves industry-specific information from an
+  endpoint and dynamically displays the JSON data with loading indicators and error handling.
+-->
+<!--
+  OBJECTIVE:
+  Develop an industry-specific interactive component (a robot search, filter and
+  comparison tool) that responds dynamically to user interactions.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NovaMotion Robotics - industrial robots, specifications, applications and enquiries.">
+  <title>NovaMotion Robotics | Industrial Robots &amp; Automation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <linearGradient id="artBg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#14489f"/><stop offset="1" stop-color="#0a2a66"/></linearGradient>
+  <linearGradient id="artOrange" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffb04d"/><stop offset="1" stop-color="#ff8a1f"/></linearGradient>
+  <linearGradient id="artSteel" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#eef3ff"/><stop offset="1" stop-color="#9fb6e0"/></linearGradient>
+  <linearGradient id="artWhite" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c3d3f2"/></linearGradient>
+<clipPath id="aClip"><rect x="20" y="170" width="360" height="40"/></clipPath>
+  <clipPath id="aClip8"><rect x="20" y="140" width="360" height="60"/></clipPath>
+</defs></svg>
+
+  <!-- ===== HEADER & NAVIGATION ===== -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a href="#top" class="logo">Nova<span>Motion</span> Robotics</a>
+
+      <!-- CSS-only mobile menu button (checkbox + label) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Open or close menu">
+      <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span><span></span><span></span></label>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="#categories">Robots</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#applications">Applications</a></li>
+          <li><a href="#media">Demo</a></li>
+          <li><a href="#specifications">Specs</a></li>
+          <li><a href="#explore">Explore</a></li>
+          <li><a href="#fleet">Fleet</a></li>
+          <li><a href="#live-data">Live Data</a></li>
+          <li><a href="#tasks">Tasks</a></li>
+          <li><a href="#finder">Finder</a></li>
+          <li><a href="#enquiry" class="cta">Get a Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Smart robots for <em>modern industry</em></h1>
+          <p>NovaMotion designs industrial robots that help factories, warehouses and hospitals work faster, safer and more accurately.</p>
+          <a href="#enquiry" class="btn btn-primary">Request a Demo</a>
+          <a href="#categories" class="btn btn-outline">Explore Robots</a>
+          <div class="hero-stats">
+            <div><strong>4</strong><span>Robot families</span></div>
+            <div><strong>500 kg</strong><span>Max payload</span></div>
+            <div><strong>24/7</strong><span>Operation</span></div>
+          </div>
+        </div>
+        <div class="hero-robot" id="hero-robot" role="img" aria-label="Animated NovaMotion robot that waves, blinks and follows your cursor with its eyes">
+          <div class="hr-bubble" id="hr-bubble" aria-live="polite">Hi! I'm NOVA-1. Click me!</div>
+          <span class="hr-chip hr-chip-1">99.2% uptime</span>
+          <span class="hr-chip hr-chip-2">500 kg payload</span>
+          <span class="hr-chip hr-chip-3">24/7 shift</span>
+          <svg viewBox="0 0 500 440" xmlns="http://www.w3.org/2000/svg" focusable="false">
+            <defs>
+              <radialGradient id="hrGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#4f8dff" stop-opacity="0.55"/>
+                <stop offset="100%" stop-color="#4f8dff" stop-opacity="0"/>
+              </radialGradient>
+              <linearGradient id="hrBody" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffffff"/>
+                <stop offset="100%" stop-color="#b9cdf2"/>
+              </linearGradient>
+              <linearGradient id="hrDark" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0d1f4d"/>
+                <stop offset="100%" stop-color="#06122e"/>
+              </linearGradient>
+              <linearGradient id="hrOrange" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#ffb04d"/>
+                <stop offset="100%" stop-color="#ff8a1f"/>
+              </linearGradient>
+            </defs>
+
+            <!-- background glow + rotating rings -->
+            <circle cx="250" cy="215" r="200" fill="url(#hrGlow)" class="hr-glow"/>
+            <circle cx="250" cy="215" r="185" class="hr-ring hr-ring-a"/>
+            <circle cx="250" cy="215" r="150" class="hr-ring hr-ring-b"/>
+            <g class="hr-orbit">
+              <circle cx="250" cy="30" r="6" fill="#ff8a1f"/>
+              <circle cx="250" cy="400" r="4" fill="#8fb5ff"/>
+              <circle cx="65" cy="215" r="5" fill="#8fb5ff"/>
+              <circle cx="435" cy="215" r="4" fill="#ff8a1f"/>
+            </g>
+
+            <!-- floor shadow -->
+            <ellipse cx="250" cy="415" rx="95" ry="12" class="hr-shadow"/>
+
+            <!-- whole robot floats; clicking makes it jump -->
+            <g class="hr-robot" id="hr-robot-body">
+
+              <!-- legs / hover thrusters -->
+              <rect x="205" y="338" width="30" height="34" rx="8" fill="#8aa6d6"/>
+              <rect x="265" y="338" width="30" height="34" rx="8" fill="#8aa6d6"/>
+              <rect x="196" y="366" width="48" height="16" rx="8" fill="url(#hrDark)"/>
+              <rect x="256" y="366" width="48" height="16" rx="8" fill="url(#hrDark)"/>
+              <path class="hr-flame" d="M210 384 q10 26 20 0 z" fill="#ff8a1f"/>
+              <path class="hr-flame hr-flame-2" d="M270 384 q10 26 20 0 z" fill="#ff8a1f"/>
+
+              <!-- left arm (swings gently) -->
+              <g class="hr-arm-left">
+                <rect x="132" y="252" width="30" height="78" rx="15" fill="#8aa6d6"/>
+                <circle cx="147" cy="338" r="19" fill="url(#hrDark)"/>
+                <path d="M136 346 l-6 18 M147 350 l0 20 M158 346 l6 18" stroke="#ff8a1f" stroke-width="5" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- right arm (waves) -->
+              <g class="hr-arm-right" id="hr-arm-right">
+                <rect x="338" y="252" width="30" height="78" rx="15" fill="#8aa6d6"/>
+                <circle cx="353" cy="338" r="19" fill="url(#hrDark)"/>
+                <path d="M342 346 l-6 18 M353 350 l0 20 M364 346 l6 18" stroke="#ff8a1f" stroke-width="5" stroke-linecap="round" fill="none"/>
+              </g>
+
+              <!-- body -->
+              <rect x="150" y="232" width="200" height="120" rx="34" fill="url(#hrBody)" stroke="#8aa6d6" stroke-width="3"/>
+              <rect x="175" y="252" width="150" height="80" rx="18" fill="url(#hrDark)"/>
+              <!-- heartbeat line -->
+              <polyline class="hr-pulse" points="185,296 215,296 228,270 244,322 258,284 270,296 315,296" fill="none" stroke="#4ff0c0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- LEDs -->
+              <circle cx="190" cy="263" r="4" class="hr-led hr-led-1"/>
+              <circle cx="205" cy="263" r="4" class="hr-led hr-led-2"/>
+              <circle cx="220" cy="263" r="4" class="hr-led hr-led-3"/>
+              <!-- spinning gear on chest -->
+              <g class="hr-gear" transform="translate(296 268)">
+                <circle r="8" fill="#ff8a1f"/>
+                <g fill="#ff8a1f">
+                  <rect x="-2.5" y="-13" width="5" height="6"/>
+                  <rect x="-2.5" y="7" width="5" height="6"/>
+                  <rect x="-13" y="-2.5" width="6" height="5"/>
+                  <rect x="7" y="-2.5" width="6" height="5"/>
+                </g>
+                <circle r="3" fill="#06122e"/>
+              </g>
+              <!-- NM badge -->
+              <rect x="215" y="334" width="70" height="12" rx="6" fill="url(#hrOrange)"/>
+
+              <!-- neck -->
+              <rect x="232" y="214" width="36" height="24" rx="6" fill="#6f8cc0"/>
+
+              <!-- antenna -->
+              <line x1="250" y1="62" x2="250" y2="92" stroke="#6f8cc0" stroke-width="6" stroke-linecap="round"/>
+              <circle cx="250" cy="54" r="10" fill="#ff8a1f" class="hr-antenna"/>
+              <circle cx="250" cy="54" r="10" fill="none" stroke="#ff8a1f" stroke-width="3" class="hr-antenna-wave"/>
+
+              <!-- head -->
+              <g class="hr-head">
+                <rect x="140" y="130" width="14" height="46" rx="7" fill="#ff8a1f"/>
+                <rect x="346" y="130" width="14" height="46" rx="7" fill="#ff8a1f"/>
+                <rect x="160" y="88" width="180" height="132" rx="44" fill="url(#hrBody)" stroke="#8aa6d6" stroke-width="3"/>
+                <rect x="178" y="108" width="144" height="76" rx="30" fill="url(#hrDark)"/>
+                <!-- scanning line inside visor -->
+                <rect x="186" y="112" width="128" height="4" rx="2" fill="#4f8dff" opacity="0.55" class="hr-scan"/>
+                <!-- eyes follow the cursor -->
+                <g id="hr-eyes">
+                  <g class="hr-eye"><ellipse cx="220" cy="146" rx="17" ry="19" fill="#4ff0c0"/><circle cx="220" cy="146" r="7" fill="#06122e" class="hr-pupil"/><circle cx="215" cy="140" r="3.5" fill="#fff"/></g>
+                  <g class="hr-eye hr-eye-2"><ellipse cx="280" cy="146" rx="17" ry="19" fill="#4ff0c0"/><circle cx="280" cy="146" r="7" fill="#06122e" class="hr-pupil"/><circle cx="275" cy="140" r="3.5" fill="#fff"/></g>
+                </g>
+                <!-- mouth equalizer -->
+                <g fill="#ff8a1f">
+                  <rect x="228" y="198" width="6" height="12" rx="3" class="hr-bar hr-bar-1"/>
+                  <rect x="240" y="198" width="6" height="12" rx="3" class="hr-bar hr-bar-2"/>
+                  <rect x="252" y="198" width="6" height="12" rx="3" class="hr-bar hr-bar-3"/>
+                  <rect x="264" y="198" width="6" height="12" rx="3" class="hr-bar hr-bar-4"/>
+                </g>
+                <!-- cheeks -->
+                <circle cx="190" cy="176" r="5" fill="#ff8a1f" opacity="0.7"/>
+                <circle cx="310" cy="176" r="5" fill="#ff8a1f" opacity="0.7"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROBOT CATEGORIES ===== -->
+    <section id="categories">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Categories</h2>
+          <p>Four robot families built for different industrial tasks.</p>
+        </header>
+        <div class="card-grid">
+
+          <article class="card">
+            <span class="badge">Best seller</span>
+            <figure><div class="art" role="img" aria-label="Animated heavy industrial robotic arm welding a metal plate"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="145" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="133" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:165px 175px;--f:0deg;--t:58deg;--dur:3.2s;animation-delay:0s"><rect x="154" y="96" width="22" height="83" rx="11" fill="url(#artOrange)"/><circle cx="165" cy="175" r="13" fill="#0d1f4d"/><circle cx="165" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:165px 100px;--f:0deg;--t:72deg;--dur:3.2s;animation-delay:0s"><rect x="157" y="34" width="16" height="70" rx="8" fill="url(#artSteel)"/><circle cx="165" cy="100" r="11" fill="#0d1f4d"/><circle cx="165" cy="100" r="4" fill="#ff8a1f"/><rect x="159" y="32" width="12" height="7" rx="2" fill="#0d1f4d"/><path d="M161 32 l2 -14 h4 l2 14z" fill="#0d1f4d"/><g class="a-vis" style="--d:3.2s"><g class="a-spark" style="transform-origin:165px 14px"><circle cx="165" cy="14" r="5" fill="#fff6c9"/><path d="M165 6v-8M157 10l-7 -5M173 10l7 -5M157 18l-7 5M173 18l7 5" stroke="#ffd34d" stroke-width="2.5" stroke-linecap="round"/></g></g></g></g><rect x="262" y="204" width="104" height="11" rx="3" fill="#0d1f4d"/><rect x="275" y="190" width="72" height="14" rx="2" fill="#9fb6e0"/><line x1="280" y1="190" x2="340" y2="190" stroke="#ffd34d" stroke-width="3" class="a-glow"/><circle cx="120" cy="196" r="4" fill="#ff4d4d" class="a-blink"/><circle cx="132" cy="196" r="4" fill="#4ff0c0" class="a-blink" style="animation-delay:.4s"/><g class="a-spin" style="transform-origin:60px 60px"><circle cx="60" cy="60" r="16" fill="none" stroke="#ff8a1f" stroke-width="4" stroke-dasharray="7 6"/><circle cx="60" cy="60" r="5" fill="#ff8a1f"/></g></svg></div></figure>
+            <div class="card-body">
+              <h3>Industrial Robotic Arms</h3>
+              <p>Welding, painting, assembly and material handling.</p>
+              <ul><li>Payload: 5 – 500 kg</li><li>Reach: up to 3.2 m</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">Safe</span>
+            <figure><div class="art" role="img" aria-label="Animated collaborative robot safely handing a part to a human worker"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><circle cx="100" cy="175" r="125" fill="none" stroke="#4ff0c0" stroke-width="2" stroke-dasharray="6 9" class="a-spin slow" style="transform-origin:100px 175px"/><rect x="80" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="68" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:100px 175px;--f:20deg;--t:50deg;--dur:2.8s;animation-delay:0s"><rect x="89" y="111" width="22" height="68" rx="11" fill="url(#artWhite)"/><circle cx="100" cy="175" r="13" fill="#0d1f4d"/><circle cx="100" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:100px 115px;--f:20deg;--t:50deg;--dur:2.8s;animation-delay:0s"><rect x="92" y="41" width="16" height="78" rx="8" fill="url(#artWhite)"/><circle cx="100" cy="115" r="11" fill="#0d1f4d"/><circle cx="100" cy="115" r="4" fill="#ff8a1f"/><circle class="a-pulse" cx="100" cy="115" r="15" fill="none" stroke="#4ff0c0" stroke-width="3"/><rect x="87" y="38" width="26" height="8" rx="3" fill="#0d1f4d"/><g class="a-finl" style="transform-origin:90px 38px"><rect x="87" y="20" width="6" height="19" rx="2" fill="#ff8a1f"/></g><g class="a-finr" style="transform-origin:110px 38px"><rect x="107" y="20" width="6" height="19" rx="2" fill="#ff8a1f"/></g></g></g><rect x="290" y="170" width="11" height="45" rx="4" fill="#0d1f4d"/><rect x="305" y="170" width="11" height="45" rx="4" fill="#0d1f4d"/><rect x="283" y="116" width="40" height="64" rx="14" fill="#ff8a1f"/><rect x="283" y="140" width="40" height="6" fill="#ffd34d"/><g class="a-nod" style="transform-origin:303px 112px"><circle cx="303" cy="98" r="15" fill="#ffd9b0"/><path d="M287 96a16 16 0 0 1 32 0z" fill="#ffd34d"/><rect x="284" y="94" width="38" height="5" rx="2" fill="#ffd34d"/><circle cx="298" cy="102" r="2" fill="#0d1f4d"/><circle cx="309" cy="102" r="2" fill="#0d1f4d"/></g><g class="a-human-arm" style="transform-origin:289px 124px"><rect x="283" y="120" width="12" height="54" rx="6" fill="#ff8a1f"/><circle cx="289" cy="176" r="7" fill="#ffd9b0"/></g><rect x="40" y="196" width="0" height="0"/><g class="a-blink"><text x="52" y="44" font-size="13" font-weight="700" fill="#4ff0c0" font-family="Segoe UI,Arial,sans-serif">SAFE</text></g></svg></div></figure>
+            <div class="card-body">
+              <h3>Collaborative Robots</h3>
+              <p>Easy-to-program robots that work beside people.</p>
+              <ul><li>Payload: 3 – 20 kg</li><li>Force-limited sensors</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">Autonomous</span>
+            <figure><div class="art" role="img" aria-label="Animated autonomous mobile robot with spinning lidar carrying boxes through a warehouse"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><g class="a-scroll"><g><rect x="10" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="76" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="20" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="46" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="24" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="110" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="176" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="120" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="146" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="124" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="210" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="276" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="220" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="246" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="224" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="310" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="376" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="320" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="346" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="324" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="410" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="476" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="420" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="446" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="424" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="510" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="576" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="520" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="546" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="524" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="610" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="676" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="620" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="646" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="624" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g></g><line x1="0" y1="232" x2="520" y2="232" stroke="#4f8dff" stroke-width="3" stroke-dasharray="12 14" class="a-belt"/><g class="a-bob"><rect x="120" y="168" width="150" height="16" rx="3" fill="#9fb6e0"/><rect x="128" y="130" width="40" height="38" rx="3" fill="#ff8a1f"/><rect x="143" y="130" width="10" height="38" fill="#7a3d00" opacity=".5"/><rect x="172" y="138" width="40" height="30" rx="3" fill="#ffb04d"/><rect x="216" y="130" width="46" height="38" rx="3" fill="#ff8a1f"/><rect x="233" y="130" width="10" height="38" fill="#7a3d00" opacity=".5"/><rect x="105" y="184" width="190" height="24" rx="12" fill="#0d1f4d"/><rect x="125" y="193" width="150" height="5" rx="2.5" fill="#ff8a1f"/><circle cx="140" cy="212" r="14" fill="#06122e"/><g class="a-spin fast" style="transform-origin:140px 212px"><path d="M140 200v24M128 212h24" stroke="#8fb5ff" stroke-width="3"/></g><circle cx="260" cy="212" r="14" fill="#06122e"/><g class="a-spin fast" style="transform-origin:260px 212px"><path d="M260 200v24M248 212h24" stroke="#8fb5ff" stroke-width="3"/></g><rect x="290" y="168" width="8" height="30" rx="3" fill="#0d1f4d"/><path d="M294 170 L370 130 A90 90 0 0 1 370 210 Z" fill="#ff4d4d" opacity=".28" class="a-lidar" style="transform-origin:294px 170px"/><circle cx="294" cy="168" r="6" fill="#ff4d4d" class="a-blink"/><circle cx="293" cy="196" r="4" fill="#fff6c9"/><path d="M297 196 l60 -12 v24z" fill="#fff6c9" opacity=".18"/></g></svg></div></figure>
+            <div class="card-body">
+              <h3>Autonomous Mobile Robots</h3>
+              <p>Self-navigating robots for logistics and transport.</p>
+              <ul><li>Payload: up to 1,000 kg</li><li>LiDAR navigation</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <span class="badge">High speed</span>
+            <figure><div class="art" role="img" aria-label="Animated delta robot sorting items at high speed on a conveyor"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="90" y="14" width="220" height="16" rx="6" fill="#2a4a8f"/><rect x="120" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><rect x="180" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><rect x="240" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><g class="a-rod" style="transform-origin:140px 44px;--f:-8.5deg;--t:-46.4deg"><rect x="137" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="140" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-rod" style="transform-origin:200px 44px;--f:24.2deg;--t:-24.2deg"><rect x="197" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="200" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-rod" style="transform-origin:260px 44px;--f:46.4deg;--t:8.5deg"><rect x="257" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="260" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-delta"><rect x="172" y="146" width="56" height="12" rx="6" fill="url(#artOrange)"/><g class="a-plunge"><rect x="197" y="158" width="6" height="14" fill="#0d1f4d"/><ellipse cx="200" cy="174" rx="11" ry="4" fill="#4ff0c0"/></g></g><rect x="20" y="192" width="360" height="22" rx="11" fill="#0d1f4d"/><line x1="34" y1="203" x2="366" y2="203" stroke="#4f8dff" stroke-width="3" stroke-dasharray="12 14" class="a-belt" stroke-linecap="round"/><g clip-path="url(#aClip)"><g class="a-runr" style="animation-delay:0.0s"><circle cx="0" cy="186" r="8" fill="#ff8a1f"/></g><g class="a-runr" style="animation-delay:-1.5s"><circle cx="0" cy="186" r="8" fill="#4ff0c0"/></g><g class="a-runr" style="animation-delay:-3.0s"><circle cx="0" cy="186" r="8" fill="#ffd34d"/></g><g class="a-runr" style="animation-delay:-4.5s"><circle cx="0" cy="186" r="8" fill="#8fb5ff"/></g></g></svg></div></figure>
+            <div class="card-body">
+              <h3>Delta Robots</h3>
+              <p>Ultra-fast sorting, packaging and electronics assembly.</p>
+              <ul><li>Up to 200 picks/min</li><li>Vision-guided</li></ul>
+              <a href="#specifications">View specifications &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery">
+      <div class="container">
+        <header class="section-head">
+          <h2>Applications Gallery</h2>
+          <p>Our robots at work across industries.</p>
+        </header>
+        <div class="gallery">
+          <figure><div class="art" role="img" aria-label="Animated robots welding a car body"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><path d="M95 200 L105 170 Q120 140 165 135 L215 135 Q250 140 275 170 L305 178 Q315 190 312 200 Z" fill="#dbe6ff"/><path d="M125 168 Q135 148 165 145 L200 145 L200 168 Z M210 145 L228 145 Q248 150 262 168 L210 168 Z" fill="#14489f"/><circle cx="140" cy="202" r="15" fill="#06122e"/><circle cx="140" cy="202" r="6" fill="#9fb6e0"/><circle cx="268" cy="202" r="15" fill="#06122e"/><circle cx="268" cy="202" r="6" fill="#9fb6e0"/><rect x="42" y="150" width="40" height="65" fill="#1b3a7a"/><rect x="30" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:62px 150px;--f:40deg;--t:75deg;--dur:1.4s;animation-delay:0s"><rect x="51" y="91" width="22" height="63" rx="11" fill="url(#artOrange)"/><circle cx="62" cy="150" r="13" fill="#0d1f4d"/><circle cx="62" cy="150" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:62px 95px;--f:20deg;--t:55deg;--dur:1.4s;animation-delay:0s"><rect x="54" y="41" width="16" height="58" rx="8" fill="url(#artSteel)"/><circle cx="62" cy="95" r="11" fill="#0d1f4d"/><circle cx="62" cy="95" r="4" fill="#ff8a1f"/><rect x="56" y="39" width="12" height="7" rx="2" fill="#0d1f4d"/><path d="M58 39 l2 -14 h4 l2 14z" fill="#0d1f4d"/><g class="" style="--d:1.4s"><g class="a-spark" style="transform-origin:62px 21px"><circle cx="62" cy="21" r="5" fill="#fff6c9"/><path d="M62 13v-8M54 17l-7 -5M70 17l7 -5M54 25l-7 5M70 25l7 5" stroke="#ffd34d" stroke-width="2.5" stroke-linecap="round"/></g></g></g></g><rect x="318" y="150" width="40" height="65" fill="#1b3a7a"/><rect x="306" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:338px 150px;--f:-40deg;--t:-75deg;--dur:1.7s;animation-delay:-0.5s"><rect x="327" y="91" width="22" height="63" rx="11" fill="url(#artOrange)"/><circle cx="338" cy="150" r="13" fill="#0d1f4d"/><circle cx="338" cy="150" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:338px 95px;--f:-20deg;--t:-55deg;--dur:1.7s;animation-delay:-0.5s"><rect x="330" y="41" width="16" height="58" rx="8" fill="url(#artSteel)"/><circle cx="338" cy="95" r="11" fill="#0d1f4d"/><circle cx="338" cy="95" r="4" fill="#ff8a1f"/><rect x="332" y="39" width="12" height="7" rx="2" fill="#0d1f4d"/><path d="M334 39 l2 -14 h4 l2 14z" fill="#0d1f4d"/><g class="" style="--d:1.7s"><g class="a-spark" style="transform-origin:338px 21px"><circle cx="338" cy="21" r="5" fill="#fff6c9"/><path d="M338 13v-8M330 17l-7 -5M346 17l7 -5M330 25l-7 5M346 25l7 5" stroke="#ffd34d" stroke-width="2.5" stroke-linecap="round"/></g></g></g></g><g class="a-flash"><circle cx="200" cy="138" r="4" fill="#fff6c9"/></g><g class="a-flash" style="animation-delay:.3s"><circle cx="250" cy="156" r="4" fill="#ffd34d"/></g></svg></div><figcaption>Automotive welding</figcaption></figure>
+          <figure><div class="art" role="img" aria-label="Animated robot placing components on a circuit board"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="70" y="118" width="260" height="92" rx="8" fill="#0e6b4a" stroke="#4ff0c0" stroke-width="2"/><path d="M90 150H150V185H210M250 125V160H300M110 130V160M320 150V195H260" fill="none" stroke="#4ff0c0" stroke-width="2.5" stroke-dasharray="10 8" class="a-belt2"/><g><rect x="100" y="135" width="34" height="22" rx="3" fill="#06122e"/><path d="M105 131v4M113 131v4M121 131v4M129 131v4M105 157v4M113 157v4M121 157v4M129 157v4" stroke="#cfdcf7" stroke-width="2"/></g><g><rect x="160" y="165" width="34" height="22" rx="3" fill="#06122e"/><path d="M165 161v4M173 161v4M181 161v4M189 161v4M165 187v4M173 187v4M181 187v4M189 187v4" stroke="#cfdcf7" stroke-width="2"/></g><g><rect x="270" y="140" width="34" height="22" rx="3" fill="#06122e"/><path d="M275 136v4M283 136v4M291 136v4M299 136v4M275 162v4M283 162v4M291 162v4M299 162v4" stroke="#cfdcf7" stroke-width="2"/></g><g><rect x="230" y="175" width="34" height="22" rx="3" fill="#06122e"/><path d="M235 171v4M243 171v4M251 171v4M259 171v4M235 197v4M243 197v4M251 197v4M259 197v4" stroke="#cfdcf7" stroke-width="2"/></g><circle cx="110" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:0.0s"/><circle cx="146" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:0.25s"/><circle cx="182" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:0.5s"/><circle cx="218" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:0.75s"/><circle cx="254" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:1.0s"/><circle cx="290" cy="198" r="4" fill="#ff8a1f" class="a-blink" style="animation-delay:1.25s"/><rect x="40" y="26" width="320" height="12" rx="6" fill="#2a4a8f"/><g class="a-gantry"><rect x="178" y="22" width="44" height="22" rx="6" fill="#0d1f4d"/><circle cx="188" cy="33" r="3" fill="#ff4d4d" class="a-blink"/><g class="a-plunge2"><rect x="197" y="44" width="6" height="44" fill="#9fb6e0"/><rect x="193" y="88" width="14" height="5" rx="1" fill="#0d1f4d"/><rect x="194" y="93" width="12" height="7" rx="1" fill="#06122e"/></g></g><path d="M200 105V118" stroke="#ff4d4d" stroke-width="2" class="a-blink"/></svg></div><figcaption>Electronics assembly</figcaption></figure>
+          <figure><div class="art" role="img" aria-label="Animated fleet of mobile robots moving boxes through warehouse aisles"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="20" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="90" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="160" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="230" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="300" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="370" y="40" width="4" height="90" fill="#2a4a8f"/><rect x="20" y="60" width="340" height="4" fill="#2a4a8f"/><rect x="20" y="90" width="340" height="4" fill="#2a4a8f"/><rect x="20" y="120" width="340" height="4" fill="#2a4a8f"/><rect x="30" y="42" width="26" height="18" fill="#ff8a1f" opacity=".85"/><rect x="30" y="72" width="26" height="18" fill="#8fb5ff" opacity=".85"/><rect x="30" y="102" width="26" height="18" fill="#ffb04d" opacity=".85"/><rect x="100" y="42" width="33" height="18" fill="#ff8a1f" opacity=".85"/><rect x="100" y="72" width="33" height="18" fill="#8fb5ff" opacity=".85"/><rect x="100" y="102" width="33" height="18" fill="#ffb04d" opacity=".85"/><rect x="170" y="42" width="26" height="18" fill="#ff8a1f" opacity=".85"/><rect x="170" y="72" width="26" height="18" fill="#8fb5ff" opacity=".85"/><rect x="170" y="102" width="26" height="18" fill="#ffb04d" opacity=".85"/><rect x="240" y="42" width="33" height="18" fill="#ff8a1f" opacity=".85"/><rect x="240" y="72" width="33" height="18" fill="#8fb5ff" opacity=".85"/><rect x="240" y="102" width="33" height="18" fill="#ffb04d" opacity=".85"/><rect x="310" y="42" width="26" height="18" fill="#ff8a1f" opacity=".85"/><rect x="310" y="72" width="26" height="18" fill="#8fb5ff" opacity=".85"/><rect x="310" y="102" width="26" height="18" fill="#ffb04d" opacity=".85"/><path d="M0 150H400M0 182H400" stroke="#4f8dff" stroke-width="2" stroke-dasharray="10 10" class="a-belt3" opacity=".6"/><g class="a-runr" style="animation-duration:6.5s;animation-delay:0s"><rect x="0" y="136" width="58" height="14" rx="5" fill="#9fb6e0"/><rect x="8" y="119" width="30" height="17" rx="2" fill="#ffb04d"/><rect x="20" y="119" width="6" height="17" fill="#7a3d00" opacity=".5"/><circle cx="12" cy="150" r="5.5" fill="#06122e"/><circle cx="46" cy="150" r="5.5" fill="#06122e"/><circle cx="54" cy="143" r="2.5" fill="#fff6c9"/></g><g class="a-runl" style="animation-duration:4.8s;animation-delay:-1s"><rect x="0" y="168" width="58" height="14" rx="5" fill="#ff8a1f"/><rect x="8" y="151" width="30" height="17" rx="2" fill="#ffb04d"/><rect x="20" y="151" width="6" height="17" fill="#7a3d00" opacity=".5"/><circle cx="12" cy="182" r="5.5" fill="#06122e"/><circle cx="46" cy="182" r="5.5" fill="#06122e"/><circle cx="4" cy="175" r="2.5" fill="#fff6c9"/></g><g class="a-runr" style="animation-duration:3.6s;animation-delay:-2s"><rect x="0" y="198" width="58" height="14" rx="5" fill="#4ff0c0"/><rect x="8" y="181" width="30" height="17" rx="2" fill="#ffb04d"/><rect x="20" y="181" width="6" height="17" fill="#7a3d00" opacity=".5"/><circle cx="12" cy="212" r="5.5" fill="#06122e"/><circle cx="46" cy="212" r="5.5" fill="#06122e"/><circle cx="54" cy="205" r="2.5" fill="#fff6c9"/></g><g class="a-runl" style="animation-duration:8s;animation-delay:-4s"><rect x="0" y="154" width="58" height="14" rx="5" fill="#cfdcf7"/><rect x="8" y="137" width="30" height="17" rx="2" fill="#ffb04d"/><rect x="20" y="137" width="6" height="17" fill="#7a3d00" opacity=".5"/><circle cx="12" cy="168" r="5.5" fill="#06122e"/><circle cx="46" cy="168" r="5.5" fill="#06122e"/><circle cx="4" cy="161" r="2.5" fill="#fff6c9"/></g><g class="a-blink"><circle cx="372" cy="30" r="5" fill="#4ff0c0"/></g></svg></div><figcaption>Warehouse logistics</figcaption></figure>
+          <figure><div class="art" role="img" aria-label="Animated robots packing bottles at high speed on a conveyor"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="90" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="78" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:110px 175px;--f:-25deg;--t:28deg;--dur:1.6s;animation-delay:0s"><rect x="99" y="101" width="22" height="78" rx="11" fill="url(#artOrange)"/><circle cx="110" cy="175" r="13" fill="#0d1f4d"/><circle cx="110" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:110px 105px;--f:-20deg;--t:25deg;--dur:1.6s;animation-delay:0s"><rect x="102" y="46" width="16" height="63" rx="8" fill="url(#artSteel)"/><circle cx="110" cy="105" r="11" fill="#0d1f4d"/><circle cx="110" cy="105" r="4" fill="#ff8a1f"/><rect x="107" y="36" width="6" height="15" fill="#0d1f4d"/><ellipse cx="110" cy="34" rx="13" ry="4.5" fill="#4ff0c0"/></g></g><rect x="205" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="193" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:225px 175px;--f:28deg;--t:-25deg;--dur:1.6s;animation-delay:-0.8s"><rect x="214" y="101" width="22" height="78" rx="11" fill="url(#artOrange)"/><circle cx="225" cy="175" r="13" fill="#0d1f4d"/><circle cx="225" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:225px 105px;--f:22deg;--t:-22deg;--dur:1.6s;animation-delay:-0.8s"><rect x="217" y="46" width="16" height="63" rx="8" fill="url(#artSteel)"/><circle cx="225" cy="105" r="11" fill="#0d1f4d"/><circle cx="225" cy="105" r="4" fill="#ff8a1f"/><rect x="212" y="43" width="26" height="8" rx="3" fill="#0d1f4d"/><g class="a-finl" style="transform-origin:215px 43px"><rect x="212" y="25" width="6" height="19" rx="2" fill="#ff8a1f"/></g><g class="a-finr" style="transform-origin:235px 43px"><rect x="232" y="25" width="6" height="19" rx="2" fill="#ff8a1f"/></g></g></g><rect x="20" y="190" width="360" height="22" rx="11" fill="#0d1f4d"/><line x1="34" y1="201" x2="366" y2="201" stroke="#4f8dff" stroke-width="3" stroke-dasharray="12 14" class="a-belt" stroke-linecap="round"/><g clip-path="url(#aClip8)"><g class="a-runr" style="animation-duration:6s;animation-delay:0.0s"><rect x="0" y="160" width="14" height="30" rx="3" fill="#4f8dff"/><rect x="3" y="154" width="8" height="7" rx="2" fill="#ff8a1f"/></g><g class="a-runr" style="animation-duration:6s;animation-delay:-1.5s"><rect x="0" y="160" width="14" height="30" rx="3" fill="#4f8dff"/><rect x="3" y="154" width="8" height="7" rx="2" fill="#ff8a1f"/></g><g class="a-runr" style="animation-duration:6s;animation-delay:-3.0s"><rect x="0" y="160" width="14" height="30" rx="3" fill="#4f8dff"/><rect x="3" y="154" width="8" height="7" rx="2" fill="#ff8a1f"/></g><g class="a-runr" style="animation-duration:6s;animation-delay:-4.5s"><rect x="0" y="160" width="14" height="30" rx="3" fill="#4f8dff"/><rect x="3" y="154" width="8" height="7" rx="2" fill="#ff8a1f"/></g></g><rect x="262" y="28" width="86" height="34" rx="6" fill="#06122e" stroke="#4ff0c0"/><text x="305" y="50" font-size="15" font-weight="700" text-anchor="middle" fill="#4ff0c0" font-family="Consolas,monospace" class="a-blink">240/min</text></svg></div><figcaption>High-speed packaging</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== APPLICATIONS ===== -->
+    <section id="applications">
+      <div class="container">
+        <header class="section-head">
+          <h2>Industrial Applications</h2>
+          <p>Where NovaMotion robots deliver the most value.</p>
+        </header>
+        <div class="app-grid">
+          <article class="app-item"><h3>Automotive</h3><p>Welding, painting and body assembly with consistent quality.</p></article>
+          <article class="app-item"><h3>Electronics</h3><p>Precise component placement and board inspection.</p></article>
+          <article class="app-item"><h3>Logistics &amp; Warehousing</h3><p>Pallet transport, order picking and sorting.</p></article>
+          <article class="app-item"><h3>Food &amp; Packaging</h3><p>Hygienic high-speed packing and palletising.</p></article>
+        </div>
+        <aside class="benefits">
+          <h3>Key Benefits</h3>
+          <ol>
+            <li>Higher productivity and 24/7 operation</li>
+            <li>Improved accuracy and product quality</li>
+            <li>Safer workplaces by automating dangerous tasks</li>
+            <li>Lower long-term operating costs</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== AUDIO, VIDEO & MAP ===== -->
+    <section id="media">
+      <div class="container">
+        <header class="section-head">
+          <h2>See Our Robots in Action</h2>
+          <p>Watch a demonstration, listen to our jingle and find our demo centre.</p>
+        </header>
+        <div class="media-grid">
+          <div class="media-box">
+            <h3>Robot Demonstration Video</h3>
+            <video controls preload="metadata" width="720" height="405">
+              <source src="https://www.google.com/imgres?q=Robot%20Demonstration%20Video&imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2FI44_zbEwz_w%2Fmaxresdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DI44_zbEwz_w&docid=Y9_wIbH1LQEOCM&tbnid=lhmxRxcrxhH3ZM&vet=12ahUKEwi3if3exO2XAxUQcGwGHZxkLQ8QnPAOegQIVhAA..i&w=1280&h=720&hcb=2&ved=2ahUKEwi3if3exO2XAxUQcGwGHZxkLQ8QnPAOegQIVhAA" type="video/mp4">
+              <track kind="captions" src="robot-demo.vtt" srclang="en" label="English" default>
+              Your browser does not support HTML5 video.
+            </video>
+            <p>A robotic arm sorting boxes beside a collaborative robot (English captions available).</p>
+          </div>
+          <div class="media-box">
+            <h3>Audio Overview</h3>
+            <audio controls preload="none">
+              <source src="media/intro.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+            <details>
+              <summary>Audio description</summary>
+              <p>Short instrumental jingle with no spoken words.</p>
+            </details>
+            <h3 style="margin-top:22px">Visit Our Facility</h3>
+            <iframe class="map-frame" style="height:220px"
+                    title="Map showing the NovaMotion Robotics demo centre area in Coimbatore"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=76.90%2C10.95%2C77.10%2C11.08&amp;layer=mapnik"
+                    loading="lazy"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPECIFICATIONS ===== -->
+    <section id="specifications">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Specifications</h2>
+          <p>Compare payload, reach and accuracy at a glance.</p>
+        </header>
+        <div class="table-wrap">
+          <table>
+            <caption>Comparison of NovaMotion robot models</caption>
+            <thead>
+              <tr>
+                <th scope="col">Model</th><th scope="col">Category</th><th scope="col">Payload</th>
+                <th scope="col">Reach / Speed</th><th scope="col">Repeatability</th><th scope="col">Power</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>NM-A500</td><td>Robotic Arm</td><td>500 kg</td><td>3.2 m reach</td><td>±0.05 mm</td><td>400 V, 3-phase</td></tr>
+              <tr><td>NM-C10</td><td>Cobot</td><td>10 kg</td><td>1.3 m reach</td><td>±0.03 mm</td><td>24 V DC</td></tr>
+              <tr><td>NM-M1000</td><td>AMR</td><td>1,000 kg</td><td>2.0 m/s</td><td>±10 mm</td><td>Li-ion, 8 h</td></tr>
+              <tr><td>NM-D200</td><td>Delta Robot</td><td>1 kg</td><td>200 picks/min</td><td>±0.1 mm</td><td>230 V AC</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ENQUIRY FORM ===== -->
+    <section id="enquiry">
+      <div class="container">
+        <header class="section-head">
+          <h2>Demo &amp; Quotation Request</h2>
+          <p>Tell us about your requirement and our team will contact you.</p>
+        </header>
+
+        <form class="form-box" id="enquiry-form" action="#" method="post" enctype="multipart/form-data" novalidate>
+          <p>Fields marked <span style="color:#c0392b">*</span> are required.</p>
+          <div class="form-summary" id="form-summary" role="alert" hidden></div>
+          <div class="form-success" id="form-success" role="status" hidden>
+            <span class="success-icon" aria-hidden="true">&#10004;</span>
+            <p id="form-success-text"></p>
+            <button type="button" class="success-close" id="form-success-close" aria-label="Dismiss message">&times;</button>
+          </div>
+
+          <fieldset>
+            <legend>Contact Details</legend>
+            <label for="fullname" class="required">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Arun Kumar" required minlength="3" maxlength="60" pattern="[A-Za-z .'-]+" title="Letters, spaces, dots and hyphens only (minimum 3 characters)">
+
+            <label for="email" class="required">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="name@company.com" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="10-digit mobile number" pattern="[6-9][0-9]{9}" title="Enter a valid 10-digit Indian mobile number">
+
+            <label for="password" class="required">Create Password</label>
+            <input type="password" id="password" name="password" required minlength="8" maxlength="30" pattern="(?=.*[A-Za-z])(?=.*[0-9]).{8,}" title="At least 8 characters with letters and numbers" placeholder="Minimum 8 characters">
+            <small>Use at least 8 characters including letters and numbers.</small>
+          </fieldset>
+
+          <fieldset>
+            <legend>Company &amp; Requirement</legend>
+            <label for="company" class="required">Company Name</label>
+            <input type="text" id="company" name="company" required maxlength="80">
+
+            <label for="industry" class="required">Industry</label>
+            <select id="industry" name="industry" required>
+              <option value="">-- Select your industry --</option>
+              <option value="automotive">Automotive</option>
+              <option value="electronics">Electronics</option>
+              <option value="logistics">Logistics &amp; Warehousing</option>
+              <option value="food">Food &amp; Packaging</option>
+              <option value="healthcare">Healthcare</option>
+              <option value="other">Other</option>
+            </select>
+
+            <label for="quantity" class="required">Number of Robots Required</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="500" step="1" value="1" required>
+
+            <label for="demodate" class="required">Preferred Demo Date</label>
+            <input type="date" id="demodate" name="demodate" min="2026-11-05" max="2027-12-31" required>
+
+            <p style="margin-top:14px"><strong>Enquiry Type <span style="color:#c0392b">*</span></strong></p>
+            <label class="inline"><input type="radio" name="enquirytype" value="demo" required> Product demo</label>
+            <label class="inline"><input type="radio" name="enquirytype" value="quote"> Price quotation</label>
+            <label class="inline"><input type="radio" name="enquirytype" value="support"> Technical support</label>
+
+            <p style="margin-top:14px"><strong>Robot Types of Interest</strong></p>
+            <label class="inline"><input type="checkbox" name="robots" value="arm"> Robotic arm</label>
+            <label class="inline"><input type="checkbox" name="robots" value="cobot"> Cobot</label>
+            <label class="inline"><input type="checkbox" name="robots" value="amr"> AMR</label>
+            <label class="inline"><input type="checkbox" name="robots" value="delta"> Delta robot</label>
+
+            <label for="details" class="required">Describe Your Application</label>
+            <textarea id="details" name="details" rows="5" required minlength="20" maxlength="500" placeholder="e.g. We need to automate welding on our assembly line (minimum 20 characters)"></textarea>
+
+            <label for="spec">Upload Requirement Document</label>
+            <input type="file" id="spec" name="spec" accept=".pdf,.doc,.docx,image/png,image/jpeg">
+            <small>Optional. PDF, Word, PNG or JPG.</small>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences &amp; Consent</legend>
+            <p><strong>Preferred Contact Method</strong></p>
+            <label class="inline"><input type="radio" name="contact" value="email" checked> Email</label>
+            <label class="inline"><input type="radio" name="contact" value="phone"> Phone</label>
+            <label class="inline" style="display:block"><input type="checkbox" name="newsletter" value="yes"> Send me product updates</label>
+            <label class="inline" style="display:block"><input type="checkbox" name="terms" value="agreed" required> I agree to the terms and privacy policy <span style="color:#c0392b">*</span></label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-blue">Submit Request</button>
+            <button type="reset" class="btn btn-grey">Reset Form</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===== INTERACTIVE ROBOT EXPLORER (animations) ===== -->
+    <section id="explore">
+      <div class="container">
+        <header class="section-head">
+          <h2>Interactive Robot Explorer</h2>
+          <p>Click the buttons to open information cards, expand sections and trigger notifications.</p>
+        </header>
+
+        <div class="explore-grid">
+          <article class="explore-card" data-title="Industrial Robotic Arms (NM-A500)" data-text="Six-axis arms built for heavy-duty welding, painting, assembly and material handling on factory lines.">
+            <div class="art" role="img" aria-label="Animated heavy industrial robotic arm welding a metal plate"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="145" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="133" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:165px 175px;--f:0deg;--t:58deg;--dur:3.2s;animation-delay:0s"><rect x="154" y="96" width="22" height="83" rx="11" fill="url(#artOrange)"/><circle cx="165" cy="175" r="13" fill="#0d1f4d"/><circle cx="165" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:165px 100px;--f:0deg;--t:72deg;--dur:3.2s;animation-delay:0s"><rect x="157" y="34" width="16" height="70" rx="8" fill="url(#artSteel)"/><circle cx="165" cy="100" r="11" fill="#0d1f4d"/><circle cx="165" cy="100" r="4" fill="#ff8a1f"/><rect x="159" y="32" width="12" height="7" rx="2" fill="#0d1f4d"/><path d="M161 32 l2 -14 h4 l2 14z" fill="#0d1f4d"/><g class="a-vis" style="--d:3.2s"><g class="a-spark" style="transform-origin:165px 14px"><circle cx="165" cy="14" r="5" fill="#fff6c9"/><path d="M165 6v-8M157 10l-7 -5M173 10l7 -5M157 18l-7 5M173 18l7 5" stroke="#ffd34d" stroke-width="2.5" stroke-linecap="round"/></g></g></g></g><rect x="262" y="204" width="104" height="11" rx="3" fill="#0d1f4d"/><rect x="275" y="190" width="72" height="14" rx="2" fill="#9fb6e0"/><line x1="280" y1="190" x2="340" y2="190" stroke="#ffd34d" stroke-width="3" class="a-glow"/><circle cx="120" cy="196" r="4" fill="#ff4d4d" class="a-blink"/><circle cx="132" cy="196" r="4" fill="#4ff0c0" class="a-blink" style="animation-delay:.4s"/><g class="a-spin" style="transform-origin:60px 60px"><circle cx="60" cy="60" r="16" fill="none" stroke="#ff8a1f" stroke-width="4" stroke-dasharray="7 6"/><circle cx="60" cy="60" r="5" fill="#ff8a1f"/></g></svg></div>
+            <div class="explore-body">
+              <h3>Industrial Robotic Arms</h3>
+              <p>Welding, painting, assembly and material handling.</p>
+              <div class="btn-row">
+                <button type="button" class="btn btn-blue btn-sm toggle-info" aria-expanded="false">Show details</button>
+                <button type="button" class="btn btn-grey btn-sm quick-view">Quick view</button>
+              </div>
+              <div class="info-panel">
+                <div class="info-inner"><div class="chips"><span class="chip">500 kg payload</span><span class="chip">3.2 m reach</span><span class="chip">±0.05 mm</span><span class="chip">400 V, 3-phase</span></div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="explore-card" data-title="Collaborative Robots (NM-C10)" data-text="Force-limited cobots that work safely beside people and are easy to program for new tasks.">
+            <div class="art" role="img" aria-label="Animated collaborative robot safely handing a part to a human worker"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><circle cx="100" cy="175" r="125" fill="none" stroke="#4ff0c0" stroke-width="2" stroke-dasharray="6 9" class="a-spin slow" style="transform-origin:100px 175px"/><rect x="80" y="175" width="40" height="40" fill="#1b3a7a"/><rect x="68" y="207" width="64" height="9" rx="4" fill="#0d1f4d"/><g class="a-sh" style="transform-origin:100px 175px;--f:20deg;--t:50deg;--dur:2.8s;animation-delay:0s"><rect x="89" y="111" width="22" height="68" rx="11" fill="url(#artWhite)"/><circle cx="100" cy="175" r="13" fill="#0d1f4d"/><circle cx="100" cy="175" r="5" fill="#ff8a1f"/><g class="a-el" style="transform-origin:100px 115px;--f:20deg;--t:50deg;--dur:2.8s;animation-delay:0s"><rect x="92" y="41" width="16" height="78" rx="8" fill="url(#artWhite)"/><circle cx="100" cy="115" r="11" fill="#0d1f4d"/><circle cx="100" cy="115" r="4" fill="#ff8a1f"/><circle class="a-pulse" cx="100" cy="115" r="15" fill="none" stroke="#4ff0c0" stroke-width="3"/><rect x="87" y="38" width="26" height="8" rx="3" fill="#0d1f4d"/><g class="a-finl" style="transform-origin:90px 38px"><rect x="87" y="20" width="6" height="19" rx="2" fill="#ff8a1f"/></g><g class="a-finr" style="transform-origin:110px 38px"><rect x="107" y="20" width="6" height="19" rx="2" fill="#ff8a1f"/></g></g></g><rect x="290" y="170" width="11" height="45" rx="4" fill="#0d1f4d"/><rect x="305" y="170" width="11" height="45" rx="4" fill="#0d1f4d"/><rect x="283" y="116" width="40" height="64" rx="14" fill="#ff8a1f"/><rect x="283" y="140" width="40" height="6" fill="#ffd34d"/><g class="a-nod" style="transform-origin:303px 112px"><circle cx="303" cy="98" r="15" fill="#ffd9b0"/><path d="M287 96a16 16 0 0 1 32 0z" fill="#ffd34d"/><rect x="284" y="94" width="38" height="5" rx="2" fill="#ffd34d"/><circle cx="298" cy="102" r="2" fill="#0d1f4d"/><circle cx="309" cy="102" r="2" fill="#0d1f4d"/></g><g class="a-human-arm" style="transform-origin:289px 124px"><rect x="283" y="120" width="12" height="54" rx="6" fill="#ff8a1f"/><circle cx="289" cy="176" r="7" fill="#ffd9b0"/></g><rect x="40" y="196" width="0" height="0"/><g class="a-blink"><text x="52" y="44" font-size="13" font-weight="700" fill="#4ff0c0" font-family="Segoe UI,Arial,sans-serif">SAFE</text></g></svg></div>
+            <div class="explore-body">
+              <h3>Collaborative Robots</h3>
+              <p>Easy-to-program robots that work beside people.</p>
+              <div class="btn-row">
+                <button type="button" class="btn btn-blue btn-sm toggle-info" aria-expanded="false">Show details</button>
+                <button type="button" class="btn btn-grey btn-sm quick-view">Quick view</button>
+              </div>
+              <div class="info-panel">
+                <div class="info-inner"><div class="chips"><span class="chip">10 kg payload</span><span class="chip">1.3 m reach</span><span class="chip">±0.03 mm</span><span class="chip">24 V DC</span></div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="explore-card" data-title="Autonomous Mobile Robots (NM-M1000)" data-text="LiDAR-guided mobile robots that move pallets and goods through warehouses without human drivers.">
+            <div class="art" role="img" aria-label="Animated autonomous mobile robot with spinning lidar carrying boxes through a warehouse"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><g class="a-scroll"><g><rect x="10" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="10" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="76" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="20" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="46" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="24" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="110" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="110" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="176" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="120" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="146" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="124" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="210" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="210" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="276" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="220" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="246" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="224" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="310" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="310" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="376" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="320" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="346" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="324" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="410" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="410" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="476" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="420" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="446" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="424" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="510" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="510" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="576" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="520" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="546" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="524" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g><g><rect x="610" y="70" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="120" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="170" width="70" height="4" fill="#2a4a8f"/><rect x="610" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="676" y="70" width="4" height="104" fill="#2a4a8f"/><rect x="620" y="100" width="22" height="20" fill="#ff8a1f" opacity=".8"/><rect x="646" y="104" width="22" height="16" fill="#ffb04d" opacity=".8"/><rect x="624" y="150" width="30" height="20" fill="#8fb5ff" opacity=".7"/></g></g><line x1="0" y1="232" x2="520" y2="232" stroke="#4f8dff" stroke-width="3" stroke-dasharray="12 14" class="a-belt"/><g class="a-bob"><rect x="120" y="168" width="150" height="16" rx="3" fill="#9fb6e0"/><rect x="128" y="130" width="40" height="38" rx="3" fill="#ff8a1f"/><rect x="143" y="130" width="10" height="38" fill="#7a3d00" opacity=".5"/><rect x="172" y="138" width="40" height="30" rx="3" fill="#ffb04d"/><rect x="216" y="130" width="46" height="38" rx="3" fill="#ff8a1f"/><rect x="233" y="130" width="10" height="38" fill="#7a3d00" opacity=".5"/><rect x="105" y="184" width="190" height="24" rx="12" fill="#0d1f4d"/><rect x="125" y="193" width="150" height="5" rx="2.5" fill="#ff8a1f"/><circle cx="140" cy="212" r="14" fill="#06122e"/><g class="a-spin fast" style="transform-origin:140px 212px"><path d="M140 200v24M128 212h24" stroke="#8fb5ff" stroke-width="3"/></g><circle cx="260" cy="212" r="14" fill="#06122e"/><g class="a-spin fast" style="transform-origin:260px 212px"><path d="M260 200v24M248 212h24" stroke="#8fb5ff" stroke-width="3"/></g><rect x="290" y="168" width="8" height="30" rx="3" fill="#0d1f4d"/><path d="M294 170 L370 130 A90 90 0 0 1 370 210 Z" fill="#ff4d4d" opacity=".28" class="a-lidar" style="transform-origin:294px 170px"/><circle cx="294" cy="168" r="6" fill="#ff4d4d" class="a-blink"/><circle cx="293" cy="196" r="4" fill="#fff6c9"/><path d="M297 196 l60 -12 v24z" fill="#fff6c9" opacity=".18"/></g></svg></div>
+            <div class="explore-body">
+              <h3>Autonomous Mobile Robots</h3>
+              <p>Self-navigating robots for logistics and transport.</p>
+              <div class="btn-row">
+                <button type="button" class="btn btn-blue btn-sm toggle-info" aria-expanded="false">Show details</button>
+                <button type="button" class="btn btn-grey btn-sm quick-view">Quick view</button>
+              </div>
+              <div class="info-panel">
+                <div class="info-inner"><div class="chips"><span class="chip">1,000 kg payload</span><span class="chip">2.0 m/s</span><span class="chip">±10 mm</span><span class="chip">Li-ion, 8 h</span></div></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="explore-card" data-title="Delta Robots (NM-D200)" data-text="Vision-guided delta robots for ultra-fast sorting, packaging and electronics assembly.">
+            <div class="art" role="img" aria-label="Animated delta robot sorting items at high speed on a conveyor"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" focusable="false"><rect width="400" height="260" fill="url(#artBg)"/><path d="M0 60H400M0 120H400M0 180H400M80 0V260M160 0V260M240 0V260M320 0V260" stroke="rgba(255,255,255,.06)"/><rect y="215" width="400" height="45" fill="#071a42"/><rect y="215" width="400" height="3" fill="rgba(255,255,255,.18)"/><rect x="90" y="14" width="220" height="16" rx="6" fill="#2a4a8f"/><rect x="120" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><rect x="180" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><rect x="240" y="30" width="40" height="14" rx="4" fill="#0d1f4d"/><g class="a-rod" style="transform-origin:140px 44px;--f:-8.5deg;--t:-46.4deg"><rect x="137" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="140" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-rod" style="transform-origin:200px 44px;--f:24.2deg;--t:-24.2deg"><rect x="197" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="200" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-rod" style="transform-origin:260px 44px;--f:46.4deg;--t:8.5deg"><rect x="257" y="44" width="6" height="104" rx="3" fill="#cfdcf7"/><circle cx="260" cy="44" r="6" fill="#ff8a1f"/></g><g class="a-delta"><rect x="172" y="146" width="56" height="12" rx="6" fill="url(#artOrange)"/><g class="a-plunge"><rect x="197" y="158" width="6" height="14" fill="#0d1f4d"/><ellipse cx="200" cy="174" rx="11" ry="4" fill="#4ff0c0"/></g></g><rect x="20" y="192" width="360" height="22" rx="11" fill="#0d1f4d"/><line x1="34" y1="203" x2="366" y2="203" stroke="#4f8dff" stroke-width="3" stroke-dasharray="12 14" class="a-belt" stroke-linecap="round"/><g clip-path="url(#aClip)"><g class="a-runr" style="animation-delay:0.0s"><circle cx="0" cy="186" r="8" fill="#ff8a1f"/></g><g class="a-runr" style="animation-delay:-1.5s"><circle cx="0" cy="186" r="8" fill="#4ff0c0"/></g><g class="a-runr" style="animation-delay:-3.0s"><circle cx="0" cy="186" r="8" fill="#ffd34d"/></g><g class="a-runr" style="animation-delay:-4.5s"><circle cx="0" cy="186" r="8" fill="#8fb5ff"/></g></g></svg></div>
+            <div class="explore-body">
+              <h3>Delta Robots</h3>
+              <p>Ultra-fast sorting, packaging and electronics assembly.</p>
+              <div class="btn-row">
+                <button type="button" class="btn btn-blue btn-sm toggle-info" aria-expanded="false">Show details</button>
+                <button type="button" class="btn btn-grey btn-sm quick-view">Quick view</button>
+              </div>
+              <div class="info-panel">
+                <div class="info-inner"><div class="chips"><span class="chip">1 kg payload</span><span class="chip">200 picks/min</span><span class="chip">±0.1 mm</span><span class="chip">230 V AC</span></div></div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="accordion">
+          <div class="acc-item">
+            <button type="button" class="acc-btn" aria-expanded="false">Safety systems <span class="acc-arrow">&#9660;</span></button>
+            <div class="acc-panel"><div><p>Force-limited sensors on our cobots and LiDAR navigation on our mobile robots help people and machines share the same floor safely.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-btn" aria-expanded="false">Installation &amp; training <span class="acc-arrow">&#9660;</span></button>
+            <div class="acc-panel"><div><p>Our team plans the layout, installs the robots and trains your operators so production can start quickly.</p></div></div>
+          </div>
+          <div class="acc-item">
+            <button type="button" class="acc-btn" aria-expanded="false">Service &amp; support <span class="acc-arrow">&#9660;</span></button>
+            <div class="acc-panel"><div><p>Raise a technical support request through the enquiry form and our engineers will get back to you.</p></div></div>
+          </div>
+        </div>
+
+        <div class="notify-row">
+          <button type="button" class="btn btn-primary notify-btn" data-type="success" data-msg="Demo request noted. Fill in the form below to confirm your slot.">Request a Demo</button>
+          <button type="button" class="btn btn-blue notify-btn" data-type="info" data-msg="You will be notified when new robot models are released.">Notify Me</button>
+          <button type="button" class="btn btn-grey notify-btn" data-type="warn" data-msg="For faults, choose Technical support in the enquiry form.">Report an Issue</button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ===== ROBOT FLEET MANAGER (DOM manipulation: add, edit, display, remove) ===== -->
+    <section id="fleet">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Fleet Manager</h2>
+          <p>Plan your own fleet: add a robot, edit it, view its details or remove it. Nothing reloads.</p>
+        </header>
+
+        <div class="fleet-stats">
+          <div><strong id="stat-total">0</strong><span>Robots</span></div>
+          <div><strong id="stat-active">0</strong><span>Active</span></div>
+          <div><strong id="stat-maint">0</strong><span>In maintenance</span></div>
+          <div><strong id="stat-payload">0 kg</strong><span>Total payload</span></div>
+        </div>
+
+        <div class="fleet-layout">
+          <div class="fleet-box" id="fleet-form">
+            <h3 id="fleet-form-title">Add a robot</h3>
+            <label for="fleet-name">Robot name</label>
+            <input type="text" id="fleet-name" maxlength="30" placeholder="e.g. Welder Line 2">
+            <label for="fleet-type">Type</label>
+            <select id="fleet-type">
+              <option value="Robotic Arm">Robotic Arm</option>
+              <option value="Cobot">Cobot</option>
+              <option value="AMR">AMR</option>
+              <option value="Delta Robot">Delta Robot</option>
+            </select>
+            <label for="fleet-payload">Payload (kg)</label>
+            <input type="number" id="fleet-payload" min="1" max="1000" value="10">
+            <label for="fleet-status">Status</label>
+            <select id="fleet-status">
+              <option value="Active">Active</option>
+              <option value="Idle">Idle</option>
+              <option value="Maintenance">Maintenance</option>
+            </select>
+            <p class="fleet-error" id="fleet-error" role="alert"></p>
+            <div class="btn-row">
+              <button type="button" class="btn btn-primary btn-sm" id="fleet-save">Add robot</button>
+              <button type="button" class="btn btn-grey btn-sm" id="fleet-cancel" hidden>Cancel edit</button>
+            </div>
+          </div>
+
+          <div class="fleet-panel">
+            <label for="fleet-search" class="sr-label">Search robots</label>
+            <input type="text" id="fleet-search" placeholder="Search by name or type">
+            <ul class="fleet-list" id="fleet-list"></ul>
+            <div class="fleet-empty" id="fleet-empty"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LIVE ROBOT DATA (fetch API: loading, error handling, JSON display) ===== -->
+    <section id="live-data">
+      <div class="container">
+        <header class="section-head">
+          <h2>Live Robot Catalogue</h2>
+          <p>Specifications and fleet statistics fetched from our data service as JSON.</p>
+        </header>
+
+        <div class="api-toolbar">
+          <button type="button" class="btn btn-primary btn-sm" id="api-load">Load robot data</button>
+          <button type="button" class="btn btn-grey btn-sm" id="api-fail">Test error handling</button>
+          <p class="api-updated" id="api-updated"></p>
+        </div>
+
+        <div class="api-filters" id="api-filters" hidden></div>
+        <div class="api-cards" id="api-cards"></div>
+
+        <div class="api-state" id="api-state" aria-live="polite">
+          <p>Click <strong>Load robot data</strong> to fetch the catalogue.</p>
+        </div>
+
+        <div class="api-table-wrap" id="api-table-wrap" hidden>
+          <table class="api-table">
+            <caption>NovaMotion robot models (click a column heading to sort)</caption>
+            <thead>
+              <tr>
+                <th scope="col"><button type="button" class="sort-btn" data-key="model">Model</button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-key="category">Category</button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-key="payload_kg">Payload</button></th>
+                <th scope="col">Reach / Speed</th>
+                <th scope="col"><button type="button" class="sort-btn" data-key="uptime">Uptime</button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-key="units">Units deployed</button></th>
+                <th scope="col"><button type="button" class="sort-btn" data-key="price_lakh">Price</button></th>
+                <th scope="col">Availability</th>
+              </tr>
+            </thead>
+            <tbody id="api-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROBOT MAINTENANCE TASK MANAGER (CRUD + Local Storage) ===== -->
+    <section id="tasks">
+      <div class="container">
+        <header class="section-head">
+          <h2>Maintenance Task Manager</h2>
+          <p>Create, view, edit and delete robot maintenance tasks. Your tasks are saved in this browser and stay after a refresh.</p>
+        </header>
+
+        <div class="tm-stats">
+          <div><strong id="tm-total">0</strong><span>Total tasks</span></div>
+          <div><strong id="tm-pending">0</strong><span>Pending</span></div>
+          <div><strong id="tm-progress">0</strong><span>In progress</span></div>
+          <div><strong id="tm-done">0</strong><span>Completed</span></div>
+        </div>
+
+        <div class="tm-layout">
+          <!-- CREATE / UPDATE form -->
+          <form class="tm-form" id="tm-form" novalidate>
+            <h3 id="tm-form-title">Add a task</h3>
+
+            <label for="tm-title">Task title</label>
+            <input type="text" id="tm-title" maxlength="60" placeholder="e.g. Replace gripper on Welder Line 1" required>
+
+            <label for="tm-robot">Robot type</label>
+            <select id="tm-robot">
+              <option value="Robotic Arm">Robotic Arm</option>
+              <option value="Cobot">Cobot</option>
+              <option value="AMR">AMR</option>
+              <option value="Delta Robot">Delta Robot</option>
+            </select>
+
+            <label for="tm-priority">Priority</label>
+            <select id="tm-priority">
+              <option value="High">High</option>
+              <option value="Medium" selected>Medium</option>
+              <option value="Low">Low</option>
+            </select>
+
+            <label for="tm-due">Due date</label>
+            <input type="date" id="tm-due" required>
+
+            <label for="tm-status">Status</label>
+            <select id="tm-status">
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+
+            <label for="tm-notes">Notes (optional)</label>
+            <textarea id="tm-notes" rows="3" maxlength="200" placeholder="Parts needed, safety checks, technician name..."></textarea>
+
+            <p class="tm-error" id="tm-error" role="alert"></p>
+            <div class="tm-btn-row">
+              <button type="submit" class="btn btn-primary btn-sm" id="tm-save">Add task</button>
+              <button type="button" class="btn btn-grey btn-sm" id="tm-cancel" hidden>Cancel edit</button>
+            </div>
+          </form>
+
+          <!-- READ: list of tasks -->
+          <div class="tm-panel">
+            <div class="tm-toolbar">
+              <input type="text" id="tm-search" placeholder="Search tasks" aria-label="Search tasks">
+              <div class="tm-filters" id="tm-filters">
+                <button type="button" class="tm-filter active" data-filter="All">All</button>
+                <button type="button" class="tm-filter" data-filter="Pending">Pending</button>
+                <button type="button" class="tm-filter" data-filter="In Progress">In Progress</button>
+                <button type="button" class="tm-filter" data-filter="Completed">Completed</button>
+              </div>
+            </div>
+
+            <div class="tm-table-wrap">
+              <table class="tm-table">
+                <caption>Robot maintenance tasks</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">Robot</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Due</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tm-body"></tbody>
+              </table>
+            </div>
+            <p class="tm-empty" id="tm-empty"></p>
+            <p class="tm-message" id="tm-message" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROBOT FINDER & COMPARISON TOOL (search, filter, sort, compare) ===== -->
+    <section id="finder">
+      <div class="container">
+        <header class="section-head">
+          <h2>Robot Finder &amp; Comparison Tool</h2>
+          <p>Search our robots, filter by type, industry and budget, then compare up to three models side by side.</p>
+        </header>
+
+        <details class="finder-help">
+          <summary>How does this tool work?</summary>
+          <div>
+            <ul>
+              <li>Type a model or name, or use the dropdowns, to narrow the list instantly.</li>
+              <li>Press <strong>Add to compare</strong> on up to three robots.</li>
+              <li>The comparison table highlights the best value in each row.</li>
+            </ul>
+          </div>
+        </details>
+
+        <div class="finder-controls">
+          <div class="finder-field finder-search">
+            <label for="finder-search">Search</label>
+            <input type="text" id="finder-search" placeholder="e.g. NM-C10 or Weld" autocomplete="off">
+          </div>
+          <div class="finder-field">
+            <label for="finder-category">Robot type</label>
+            <select id="finder-category">
+              <option value="All">All types</option>
+              <option value="Robotic Arm">Robotic Arm</option>
+              <option value="Cobot">Cobot</option>
+              <option value="AMR">AMR</option>
+              <option value="Delta Robot">Delta Robot</option>
+            </select>
+          </div>
+          <div class="finder-field">
+            <label for="finder-industry">Industry</label>
+            <select id="finder-industry">
+              <option value="All">All industries</option>
+              <option value="Automotive">Automotive</option>
+              <option value="Electronics">Electronics</option>
+              <option value="Logistics">Logistics &amp; Warehousing</option>
+              <option value="Food">Food &amp; Packaging</option>
+              <option value="Healthcare">Healthcare</option>
+            </select>
+          </div>
+          <div class="finder-field">
+            <label for="finder-sort">Sort by</label>
+            <select id="finder-sort">
+              <option value="recommended">Recommended</option>
+              <option value="payload">Payload (high to low)</option>
+              <option value="price">Price (low to high)</option>
+              <option value="uptime">Uptime (high to low)</option>
+            </select>
+          </div>
+          <div class="finder-field">
+            <label for="finder-price">Max price: <output id="finder-price-out" for="finder-price">&#8377;70 lakh</output></label>
+            <input type="range" id="finder-price" min="5" max="70" step="1" value="70">
+          </div>
+          <div class="finder-actions">
+            <button type="button" class="btn btn-grey btn-sm finder-toggle" id="finder-stock" aria-pressed="false">In stock only</button>
+            <button type="button" class="btn btn-grey btn-sm" id="finder-reset">Reset filters</button>
+          </div>
+        </div>
+
+        <p class="finder-count" id="finder-count" role="status" aria-live="polite"></p>
+        <p class="finder-notice" id="finder-notice" role="alert"></p>
+
+        <ul class="finder-grid" id="finder-grid"></ul>
+        <div class="finder-empty" id="finder-empty" hidden>
+          <h3>No robots match your filters</h3>
+          <p>Try a higher budget, a different industry or clear the search box.</p>
+          <button type="button" class="btn btn-blue btn-sm" id="finder-empty-reset">Reset filters</button>
+        </div>
+
+        <div class="compare-panel" id="compare-panel">
+          <div class="compare-head">
+            <h3>Compare robots <span class="compare-count" id="compare-count">0 / 3</span></h3>
+            <div class="compare-head-actions">
+              <a href="#enquiry" class="btn btn-primary btn-sm" id="compare-quote" hidden>Request a quote</a>
+              <button type="button" class="btn btn-grey btn-sm" id="compare-clear" hidden>Clear all</button>
+            </div>
+          </div>
+          <div class="compare-body" id="compare-body"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>NovaMotion Robotics</h3>
+          <p>Smart robots for modern industry. Designing safer, faster and more accurate automation.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#categories">Robots</a></li>
+            <li><a href="#specifications">Specifications</a></li>
+            <li><a href="#enquiry">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <address>
+            12 Automation Park, Coimbatore,<br>Tamil Nadu, India<br>
+            <a href="mailto:info@novamotion.example">info@novamotion.example</a>
+          </address>
+        </div>
+      </div>
+      <p class="copyright">&copy; 2026 NovaMotion Robotics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="to-top" aria-label="Back to top">&uarr;</a>
+  <span class="screen-badge" aria-hidden="true"></span>
+
+  <!-- Popup information card (opened by "Quick view") -->
+  <div class="modal-overlay" id="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" aria-label="Close">&times;</button>
+      <div class="art" id="modal-art" role="img" aria-label=""></div>
+      <div class="modal-body">
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+        <div class="chips" id="modal-chips"></div>
+        <div class="btn-row" style="margin-top:16px">
+          <a href="#enquiry" class="btn btn-primary btn-sm" id="modal-cta">Request a Demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Notifications appear here -->
+  <div class="toast-stack" id="toast-stack" aria-live="polite"></div>
+
+  <script>
+    /* Close the mobile menu after a link is tapped */
+    document.querySelectorAll(".nav-list a").forEach(function (a) {
+      a.addEventListener("click", function () { document.getElementById("nav-toggle").checked = false; });
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
